@@ -1,0 +1,43 @@
+{
+  "title": "高标仓跨境批次与绿色计量协同领域上下文",
+  "type": "object",
+  "required": [
+    "domain",
+    "version",
+    "actors",
+    "facts",
+    "constraints"
+  ],
+  "properties": {
+    "domain": {
+      "type": "string",
+      "const": "green-intermodal-batch"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "actors": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "string"
+      }
+    },
+    "facts": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}
