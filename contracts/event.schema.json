@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "批次与计量服务事件信封",
+  "type": "object",
+  "required": ["seq", "type", "data"],
+  "properties": {
+    "seq": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "单调递增的事件序号，恢复时按此重放"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "party_registered",
+        "order_registered",
+        "batch_registered",
+        "batch_split",
+        "batch_merge",
+        "stage_confirmed",
+        "located",
+        "window_registered",
+        "window_assigned",
+        "incident_reported",
+        "meter_registered",
+        "reading_received",
+        "reading_superseded",
+        "reading_quarantined",
+        "driver_recorded",
+        "carbon_factor_published",
+        "allocation_created",
+        "settlement_flagged",
+        "dispute_raised",
+        "relief_granted",
+        "settlement_rechecked",
+        "task_scheduled",
+        "task_completed"
+      ]
+    },
+    "data": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}
